@@ -14,7 +14,7 @@ FactoryGirl.define do
     category
   end
 
-    sequence(:title) { |n| "Finance #{n}"}
+    sequence(:title) { |n| "Finance #{n}" }
     factory :category do
       title
 
@@ -28,4 +28,10 @@ FactoryGirl.define do
       end
     end
   end
+
+  sequence(:content) { |n| "Hello #{n}" }
+  factory :comment do
+  content
+end
+
 end

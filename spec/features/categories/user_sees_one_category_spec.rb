@@ -10,7 +10,6 @@ describe 'User sees one category' do
 
     category.jobs.each do |job|
     expect(page).to have_link job.title, company_job_path(job.company, job)
-    save_and_open_page
     end
   end
 end
