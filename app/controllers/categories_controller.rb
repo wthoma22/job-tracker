@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 
   def index
-    @category = Category.all
+    @categories = Category.all
   end
 
   def new
@@ -20,6 +20,22 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @jobs = @category.jobs
+  end
+
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    @category.update(category_params)
+      if @category.save
+        flash[:success] = "#{@category.title} updated!"
+        redirect_to category_path(@category)
+      else
+        render :edit
+      end
   end
 
 private

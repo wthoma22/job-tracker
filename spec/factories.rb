@@ -9,6 +9,7 @@ FactoryGirl.define do
     level_of_interest 80
     city "Denver"
     company
+    category
   end
 
     factory :category do
