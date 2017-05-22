@@ -34,4 +34,11 @@ FactoryGirl.define do
   content
 end
 
+  factory(:contact) do
+    full_name "Ronnie"
+    position "Hiring Manager"
+    email "ronnie@wooo.com"
+    company nil
+  end
+
 end

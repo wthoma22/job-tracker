@@ -8,7 +8,6 @@ describe 'User can create a comment' do
 
     fill_in "comment[content]", with: "Great Job!"
     click_on "Create Comment"
-save_and_open_page
     expect(current_path).to eq company_job_path(job.company, job)
     expect(page).to have_content("Great Job!")
   end
